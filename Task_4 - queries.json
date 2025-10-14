@@ -1,5 +1,4 @@
-[
-  "db.restaurants.find();",
+[ "db.restaurants.find();",
   "db.restaurants.find({}, {restaurant_id:1, name:1, borough:1, cuisine:1});",
   "db.restaurants.find({}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1});",
   "db.restaurants.find({}, {_id:0, restaurant_id:1, name:1, borough:1, zip_code:1});",
@@ -22,7 +21,7 @@
   "db.restaurants.find({$or: [{cuisine:{$nin: [\"American \", \"Chinese\", \"Hamburgers\", \"Chicken\", \"Donuts\", \"Bakery\", \"Ice Cream, Gelato, Yogurt, Ices\"]}}, {name:{$regex:\"^Wil\"}}]}, {name:1, cuisine:1, borough:1,  _id:0, restaurant_id:1});",
   "db.restaurants.find({\"grades.grade\":\"A\", \"grades.score\":11, \"grades.date\":ISODate(\"2014-08-11T00:00:00Z\")}, {_id:0, restaurant_id:1, name:1, grades:1});",
   "db.restaurants.find({\"grades.1.grade\":\"A\", \"grades.1.score\":9, \"grades.1.date\":ISODate(\"2014-08-11T00:00:00Z\")}, {_id:0, restaurant_id:1, name:1, grades:1});",
-  "db.restaurants.find({\"address.coord.1\":{$gt:42, $lt:52}}, {_id:0, restaurant_id:1, name:1, \"address.street\":1, \"address.zipcode\":1, \"address.coord\":1});",
+  "db.restaurants.find({\"address.coord.1\":{$gt:42, $lte:52}}, {_id:0, restaurant_id:1, name:1, \"address.street\":1, \"address.zipcode\":1, \"address.coord\":1});",
   "db.restaurants.find({}).sort({name:1});",
   "db.restaurants.find({}).sort({name:-1});",
   "db.restaurants.find({}).sort({cuisine:1}, {borough:-1});",
